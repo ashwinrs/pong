@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF30BA1F18F257B800AC27DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA1E18F257B800AC27DD /* Cocoa.framework */; };
+		CF30BA2918F257B800AC27DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF30BA2718F257B800AC27DD /* InfoPlist.strings */; };
+		CF30BA2B18F257B800AC27DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF30BA2A18F257B800AC27DD /* main.cpp */; };
+		CF30BA2F18F257B800AC27DD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF30BA2D18F257B800AC27DD /* Credits.rtf */; };
+		CF30BA3E18F257B800AC27DD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA3D18F257B800AC27DD /* XCTest.framework */; };
+		CF30BA3F18F257B800AC27DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA1E18F257B800AC27DD /* Cocoa.framework */; };
+		CF30BA4718F257B800AC27DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF30BA4518F257B800AC27DD /* InfoPlist.strings */; };
+		CF30BA4918F257B800AC27DD /* pongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF30BA4818F257B800AC27DD /* pongTests.m */; };
+		CF30BA5C18F25CB400AC27DD /* Allegro-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5118F25CB400AC27DD /* Allegro-5.1.framework */; };
+		CF30BA5D18F25CB400AC27DD /* AllegroAcodec-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5218F25CB400AC27DD /* AllegroAcodec-5.1.framework */; };
+		CF30BA5E18F25CB400AC27DD /* AllegroAudio-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5318F25CB400AC27DD /* AllegroAudio-5.1.framework */; };
+		CF30BA5F18F25CB400AC27DD /* AllegroColor-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5418F25CB400AC27DD /* AllegroColor-5.1.framework */; };
+		CF30BA6018F25CB400AC27DD /* AllegroDialog-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5518F25CB400AC27DD /* AllegroDialog-5.1.framework */; };
+		CF30BA6118F25CB400AC27DD /* AllegroFont-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5618F25CB400AC27DD /* AllegroFont-5.1.framework */; };
+		CF30BA6218F25CB400AC27DD /* AllegroImage-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5718F25CB400AC27DD /* AllegroImage-5.1.framework */; };
+		CF30BA6318F25CB400AC27DD /* AllegroMain-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5818F25CB400AC27DD /* AllegroMain-5.1.framework */; };
+		CF30BA6418F25CB400AC27DD /* AllegroMemfile-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */; };
+		CF30BA6518F25CB400AC27DD /* AllegroPrimitives-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */; };
+		CF30BA6618F25CB400AC27DD /* AllegroTTF-5.1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */; };
+		CF30BA6718F25CEE00AC27DD /* Allegro-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5118F25CB400AC27DD /* Allegro-5.1.framework */; };
+		CF30BA6818F25CEE00AC27DD /* AllegroAcodec-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5218F25CB400AC27DD /* AllegroAcodec-5.1.framework */; };
+		CF30BA6918F25CEE00AC27DD /* AllegroAudio-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5318F25CB400AC27DD /* AllegroAudio-5.1.framework */; };
+		CF30BA6A18F25CEE00AC27DD /* AllegroColor-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5418F25CB400AC27DD /* AllegroColor-5.1.framework */; };
+		CF30BA6B18F25CEE00AC27DD /* AllegroDialog-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5518F25CB400AC27DD /* AllegroDialog-5.1.framework */; };
+		CF30BA6C18F25CEE00AC27DD /* AllegroFont-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5618F25CB400AC27DD /* AllegroFont-5.1.framework */; };
+		CF30BA6D18F25CEE00AC27DD /* AllegroImage-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5718F25CB400AC27DD /* AllegroImage-5.1.framework */; };
+		CF30BA6E18F25CEE00AC27DD /* AllegroMain-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5818F25CB400AC27DD /* AllegroMain-5.1.framework */; };
+		CF30BA6F18F25CEE00AC27DD /* AllegroMemfile-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */; };
+		CF30BA7018F25CEE00AC27DD /* AllegroPrimitives-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */; };
+		CF30BA7118F25CEE00AC27DD /* AllegroTTF-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */; };
+		CF30BA8918F2ECCA00AC27DD /* yellow_window.cpp in Resources */ = {isa = PBXBuildFile; fileRef = CF30BA8818F2ECCA00AC27DD /* yellow_window.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF30BA4018F257B800AC27DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF30BA1118F255CE00AC27DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF30BA1A18F257B800AC27DD;
+			remoteInfo = pong;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF30BA5018F2580700AC27DD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				CF30BA6718F25CEE00AC27DD /* Allegro-5.1.framework in CopyFiles */,
+				CF30BA6818F25CEE00AC27DD /* AllegroAcodec-5.1.framework in CopyFiles */,
+				CF30BA6918F25CEE00AC27DD /* AllegroAudio-5.1.framework in CopyFiles */,
+				CF30BA6A18F25CEE00AC27DD /* AllegroColor-5.1.framework in CopyFiles */,
+				CF30BA6B18F25CEE00AC27DD /* AllegroDialog-5.1.framework in CopyFiles */,
+				CF30BA6C18F25CEE00AC27DD /* AllegroFont-5.1.framework in CopyFiles */,
+				CF30BA6D18F25CEE00AC27DD /* AllegroImage-5.1.framework in CopyFiles */,
+				CF30BA6E18F25CEE00AC27DD /* AllegroMain-5.1.framework in CopyFiles */,
+				CF30BA6F18F25CEE00AC27DD /* AllegroMemfile-5.1.framework in CopyFiles */,
+				CF30BA7018F25CEE00AC27DD /* AllegroPrimitives-5.1.framework in CopyFiles */,
+				CF30BA7118F25CEE00AC27DD /* AllegroTTF-5.1.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CF30BA1B18F257B800AC27DD /* pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF30BA1E18F257B800AC27DD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CF30BA2118F257B800AC27DD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		CF30BA2218F257B800AC27DD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CF30BA2318F257B800AC27DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF30BA2618F257B800AC27DD /* pong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pong-Info.plist"; sourceTree = "<group>"; };
+		CF30BA2818F257B800AC27DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF30BA2A18F257B800AC27DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CF30BA2C18F257B800AC27DD /* pong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pong-Prefix.pch"; sourceTree = "<group>"; };
+		CF30BA2E18F257B800AC27DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		CF30BA3C18F257B800AC27DD /* pongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF30BA3D18F257B800AC27DD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CF30BA4418F257B800AC27DD /* pongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pongTests-Info.plist"; sourceTree = "<group>"; };
+		CF30BA4618F257B800AC27DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF30BA4818F257B800AC27DD /* pongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pongTests.m; sourceTree = "<group>"; };
+		CF30BA5118F25CB400AC27DD /* Allegro-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Allegro-5.1.framework"; path = "../../../../../../../Library/Frameworks/Allegro-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5218F25CB400AC27DD /* AllegroAcodec-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroAcodec-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroAcodec-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5318F25CB400AC27DD /* AllegroAudio-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroAudio-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroAudio-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5418F25CB400AC27DD /* AllegroColor-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroColor-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroColor-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5518F25CB400AC27DD /* AllegroDialog-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroDialog-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroDialog-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5618F25CB400AC27DD /* AllegroFont-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroFont-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroFont-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5718F25CB400AC27DD /* AllegroImage-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroImage-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroImage-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5818F25CB400AC27DD /* AllegroMain-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroMain-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroMain-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroMemfile-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroMemfile-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroPrimitives-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroPrimitives-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroTTF-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroTTF-5.1.framework"; sourceTree = "<group>"; };
+		CF30BA8818F2ECCA00AC27DD /* yellow_window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yellow_window.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF30BA1818F257B800AC27DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF30BA5C18F25CB400AC27DD /* Allegro-5.1.framework in Frameworks */,
+				CF30BA5D18F25CB400AC27DD /* AllegroAcodec-5.1.framework in Frameworks */,
+				CF30BA5E18F25CB400AC27DD /* AllegroAudio-5.1.framework in Frameworks */,
+				CF30BA5F18F25CB400AC27DD /* AllegroColor-5.1.framework in Frameworks */,
+				CF30BA6018F25CB400AC27DD /* AllegroDialog-5.1.framework in Frameworks */,
+				CF30BA6118F25CB400AC27DD /* AllegroFont-5.1.framework in Frameworks */,
+				CF30BA6218F25CB400AC27DD /* AllegroImage-5.1.framework in Frameworks */,
+				CF30BA6318F25CB400AC27DD /* AllegroMain-5.1.framework in Frameworks */,
+				CF30BA6418F25CB400AC27DD /* AllegroMemfile-5.1.framework in Frameworks */,
+				CF30BA6518F25CB400AC27DD /* AllegroPrimitives-5.1.framework in Frameworks */,
+				CF30BA6618F25CB400AC27DD /* AllegroTTF-5.1.framework in Frameworks */,
+				CF30BA1F18F257B800AC27DD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF30BA3918F257B800AC27DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF30BA3F18F257B800AC27DD /* Cocoa.framework in Frameworks */,
+				CF30BA3E18F257B800AC27DD /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF30BA1018F255CE00AC27DD = {
+			isa = PBXGroup;
+			children = (
+				CF30BA2418F257B800AC27DD /* pong */,
+				CF30BA4218F257B800AC27DD /* pongTests */,
+				CF30BA1D18F257B800AC27DD /* Frameworks */,
+				CF30BA1C18F257B800AC27DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF30BA1C18F257B800AC27DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA1B18F257B800AC27DD /* pong.app */,
+				CF30BA3C18F257B800AC27DD /* pongTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF30BA1D18F257B800AC27DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA5118F25CB400AC27DD /* Allegro-5.1.framework */,
+				CF30BA5218F25CB400AC27DD /* AllegroAcodec-5.1.framework */,
+				CF30BA5318F25CB400AC27DD /* AllegroAudio-5.1.framework */,
+				CF30BA5418F25CB400AC27DD /* AllegroColor-5.1.framework */,
+				CF30BA5518F25CB400AC27DD /* AllegroDialog-5.1.framework */,
+				CF30BA5618F25CB400AC27DD /* AllegroFont-5.1.framework */,
+				CF30BA5718F25CB400AC27DD /* AllegroImage-5.1.framework */,
+				CF30BA5818F25CB400AC27DD /* AllegroMain-5.1.framework */,
+				CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */,
+				CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */,
+				CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */,
+				CF30BA1E18F257B800AC27DD /* Cocoa.framework */,
+				CF30BA3D18F257B800AC27DD /* XCTest.framework */,
+				CF30BA2018F257B800AC27DD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF30BA2018F257B800AC27DD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA2118F257B800AC27DD /* AppKit.framework */,
+				CF30BA2218F257B800AC27DD /* CoreData.framework */,
+				CF30BA2318F257B800AC27DD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		CF30BA2418F257B800AC27DD /* pong */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA8818F2ECCA00AC27DD /* yellow_window.cpp */,
+				CF30BA2A18F257B800AC27DD /* main.cpp */,
+				CF30BA2518F257B800AC27DD /* Supporting Files */,
+			);
+			path = pong;
+			sourceTree = "<group>";
+		};
+		CF30BA2518F257B800AC27DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA2618F257B800AC27DD /* pong-Info.plist */,
+				CF30BA2718F257B800AC27DD /* InfoPlist.strings */,
+				CF30BA2C18F257B800AC27DD /* pong-Prefix.pch */,
+				CF30BA2D18F257B800AC27DD /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF30BA4218F257B800AC27DD /* pongTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA4818F257B800AC27DD /* pongTests.m */,
+				CF30BA4318F257B800AC27DD /* Supporting Files */,
+			);
+			path = pongTests;
+			sourceTree = "<group>";
+		};
+		CF30BA4318F257B800AC27DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF30BA4418F257B800AC27DD /* pongTests-Info.plist */,
+				CF30BA4518F257B800AC27DD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF30BA1A18F257B800AC27DD /* pong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF30BA4A18F257B800AC27DD /* Build configuration list for PBXNativeTarget "pong" */;
+			buildPhases = (
+				CF30BA1718F257B800AC27DD /* Sources */,
+				CF30BA1818F257B800AC27DD /* Frameworks */,
+				CF30BA1918F257B800AC27DD /* Resources */,
+				CF30BA5018F2580700AC27DD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pong;
+			productName = pong;
+			productReference = CF30BA1B18F257B800AC27DD /* pong.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF30BA3B18F257B800AC27DD /* pongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF30BA4D18F257B800AC27DD /* Build configuration list for PBXNativeTarget "pongTests" */;
+			buildPhases = (
+				CF30BA3818F257B800AC27DD /* Sources */,
+				CF30BA3918F257B800AC27DD /* Frameworks */,
+				CF30BA3A18F257B800AC27DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF30BA4118F257B800AC27DD /* PBXTargetDependency */,
+			);
+			name = pongTests;
+			productName = pongTests;
+			productReference = CF30BA3C18F257B800AC27DD /* pongTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF30BA1118F255CE00AC27DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					CF30BA3B18F257B800AC27DD = {
+						TestTargetID = CF30BA1A18F257B800AC27DD;
+					};
+				};
+			};
+			buildConfigurationList = CF30BA1418F255CE00AC27DD /* Build configuration list for PBXProject "pong" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF30BA1018F255CE00AC27DD;
+			productRefGroup = CF30BA1C18F257B800AC27DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF30BA1A18F257B800AC27DD /* pong */,
+				CF30BA3B18F257B800AC27DD /* pongTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF30BA1918F257B800AC27DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF30BA2918F257B800AC27DD /* InfoPlist.strings in Resources */,
+				CF30BA2F18F257B800AC27DD /* Credits.rtf in Resources */,
+				CF30BA8918F2ECCA00AC27DD /* yellow_window.cpp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF30BA3A18F257B800AC27DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF30BA4718F257B800AC27DD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF30BA1718F257B800AC27DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF30BA2B18F257B800AC27DD /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF30BA3818F257B800AC27DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF30BA4918F257B800AC27DD /* pongTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF30BA4118F257B800AC27DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF30BA1A18F257B800AC27DD /* pong */;
+			targetProxy = CF30BA4018F257B800AC27DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF30BA2718F257B800AC27DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF30BA2818F257B800AC27DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF30BA2D18F257B800AC27DD /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF30BA2E18F257B800AC27DD /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		CF30BA4518F257B800AC27DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF30BA4618F257B800AC27DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF30BA1518F255CE00AC27DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		CF30BA1618F255CE00AC27DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		CF30BA4B18F257B800AC27DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks,
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Library/Frameworks/Allegro-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/Allegro-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/Allegro-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroAcodec-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroMain-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroAudio-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroColor-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroDialog-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroImage-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroFont-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroTTF-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroPrimitives-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroPhysfs-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroMemfile-5.1.framework/Versions/Current/Headers",
+				);
+				INFOPLIST_FILE = "pong/pong-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CF30BA4C18F257B800AC27DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks,
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Library/Frameworks/Allegro-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/Allegro-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/Allegro-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroAcodec-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroMain-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroAudio-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroColor-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroDialog-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroImage-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroFont-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroTTF-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroPrimitives-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroPhysfs-5.1.framework/Versions/Current/Headers",
+					"/Library/Frameworks/AllegroMemfile-5.1.framework/Versions/Current/Headers",
+				);
+				INFOPLIST_FILE = "pong/pong-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CF30BA4E18F257B800AC27DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/pong.app/Contents/MacOS/pong";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pong/pong-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "pongTests/pongTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CF30BA4F18F257B800AC27DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/pong.app/Contents/MacOS/pong";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pong/pong-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "pongTests/pongTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF30BA1418F255CE00AC27DD /* Build configuration list for PBXProject "pong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF30BA1518F255CE00AC27DD /* Debug */,
+				CF30BA1618F255CE00AC27DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF30BA4A18F257B800AC27DD /* Build configuration list for PBXNativeTarget "pong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF30BA4B18F257B800AC27DD /* Debug */,
+				CF30BA4C18F257B800AC27DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF30BA4D18F257B800AC27DD /* Build configuration list for PBXNativeTarget "pongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF30BA4E18F257B800AC27DD /* Debug */,
+				CF30BA4F18F257B800AC27DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF30BA1118F255CE00AC27DD /* Project object */;
+}
