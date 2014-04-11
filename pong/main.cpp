@@ -85,13 +85,54 @@ int main(int argc, char **argv) {
     event_queue = al_create_event_queue();
     
     if(!event_queue){
-        fprintf(stderr, "failed to create event")
+        fprintf(stderr, "failed to create event");
+        al_destroy_bitmap(bouncer);
+        al_destroy_display(display);
+        al_destroy_timer(timer);
+        return -1;
     }
     
+    al_register_event_source(event_queue, al_get_display_event_source(display));
+    al_register_event_source(event_queue, al_get_timer_event_source(timer));
+    al_register_event_source(event_queue, al_get_mouse_event_source());
+    al_clear_to_color(al_map_rgb(0, 0, 0));
+    al_flip_display();
+    al_start_timer(timer);
     
+    DATA data;
     
+    thread_1 = al_create_thread(Func_Thread, &data);
+    al_start_thread(thread_1);
     
+    al_lock_mutex(data.mutex);
+    while (!data.ready) {
+        al_wait_cond(data.cond, data.mutex);
+    }
+    al_unlock_mutex(data.mutex);
     
+    al_lock_mutex(data.mutex);
+    data.modi_X = true;
+    data.ready = false;
+    al_unlock_mutex(data.mutex);
+    
+    thread_2 = al_create_thread(Func_Thread, &data);
+    al_start_thread(thread_2);
+    
+    al_lock_mutex(data.mutex);
+    while (!data.ready) {
+        al_wait_cond(data.cond, data.mutex);
+    }
+    al_unlock_mutex(data.mutex);
+    
+    while (1) {
+        ALLEGRO_EVENT ev;
+        al_wait_for_event(event_queue, &ev);
+        
+        
+        
+    }
+    
+     
     
     
     
