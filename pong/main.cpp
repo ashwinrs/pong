@@ -128,20 +128,53 @@ int main(int argc, char **argv) {
         ALLEGRO_EVENT ev;
         al_wait_for_event(event_queue, &ev);
         
+        if(ev.type == ALLEGRO_EVENT_TIMER){
+            redraw = true;
+        }
+        else if(ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN){
+            break;
+        }else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE){
+            break;
+        }
         
+        if (redraw && al_is_event_queue_empty(event_queue)) {
+            redraw = false;
+            al_lock_mutex(data.mutex);
+            float X = data.posiX;
+            float Y = data.posiY;
+            al_unlock_mutex(data.mutex);
+            
+            al_draw_bitmap(bouncer, X, Y, 0);
+            
+            al_flip_display();
+        }
         
     }
-    
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    return NULL;
-
+    return 0;
 }
+
+    static void *Func_Thread(ALLEGRO_THREAD *thr, void *arg){
+        DATA *data = (DATA*) arg;
+        float num = 0.1;
+        
+        al_lock_mutex(data->mutex);
+        
+        bool modi_X = data->modi_X;
+        data->ready = true;
+        al_broadcast_cond(data->cond);
+        al_unlock_mutex(data->mutex);
+        
+        while (!al_get_thread_should_stop(thr)) {
+            al_lock_mutex(data->mutex);
+            if (modi_X) {
+                data->posiX += num;
+            }else{
+                data->posiY += num;
+            }
+            al_unlock_mutex(data->mutex);
+            
+            al_rest(0.01);
+        }
+        return NULL;
+    }
+
