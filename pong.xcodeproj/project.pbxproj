@@ -37,7 +37,7 @@
 		CF30BA6F18F25CEE00AC27DD /* AllegroMemfile-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */; };
 		CF30BA7018F25CEE00AC27DD /* AllegroPrimitives-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */; };
 		CF30BA7118F25CEE00AC27DD /* AllegroTTF-5.1.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */; };
-		CF30BA8918F2ECCA00AC27DD /* yellow_window.cpp in Resources */ = {isa = PBXBuildFile; fileRef = CF30BA8818F2ECCA00AC27DD /* yellow_window.cpp */; };
+		CFFB996518FCED710047F282 /* thread_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFFB996318FCED710047F282 /* thread_example.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +100,9 @@
 		CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroMemfile-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroMemfile-5.1.framework"; sourceTree = "<group>"; };
 		CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroPrimitives-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroPrimitives-5.1.framework"; sourceTree = "<group>"; };
 		CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroTTF-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroTTF-5.1.framework"; sourceTree = "<group>"; };
-		CF30BA8818F2ECCA00AC27DD /* yellow_window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yellow_window.cpp; sourceTree = "<group>"; };
+		CFFB996318FCED710047F282 /* thread_example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread_example.cpp; sourceTree = "<group>"; };
+		CFFB996418FCED710047F282 /* thread_example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread_example.h; sourceTree = "<group>"; };
+		CFFB996618FCF55D0047F282 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +190,11 @@
 		CF30BA2418F257B800AC27DD /* pong */ = {
 			isa = PBXGroup;
 			children = (
-				CF30BA8818F2ECCA00AC27DD /* yellow_window.cpp */,
 				CF30BA2A18F257B800AC27DD /* main.cpp */,
 				CF30BA2518F257B800AC27DD /* Supporting Files */,
+				CFFB996318FCED710047F282 /* thread_example.cpp */,
+				CFFB996418FCED710047F282 /* thread_example.h */,
+				CFFB996618FCF55D0047F282 /* main.h */,
 			);
 			path = pong;
 			sourceTree = "<group>";
@@ -302,7 +306,6 @@
 			files = (
 				CF30BA2918F257B800AC27DD /* InfoPlist.strings in Resources */,
 				CF30BA2F18F257B800AC27DD /* Credits.rtf in Resources */,
-				CF30BA8918F2ECCA00AC27DD /* yellow_window.cpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFB996518FCED710047F282 /* thread_example.cpp in Sources */,
 				CF30BA2B18F257B800AC27DD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
