@@ -40,26 +40,23 @@ int main(int argc, char **argv) {
         return -1;
     }
     
+    //Give the bouncer pink color
     al_set_target_bitmap(bouncer);
-    
     al_clear_to_color(al_map_rgb(255, 0, 255));
     
+    //Give the pad yellow color
     al_set_target_bitmap(pad);
-    
     al_clear_to_color(al_map_rgb(255, 255, 0));
     
     al_set_target_bitmap(al_get_backbuffer(display));
     
+    //Register sources to event queue
     al_register_event_source(event_queue, al_get_display_event_source(display));
-    
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
-    
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     
     al_clear_to_color(al_map_rgb(0,0,0));
-    
     al_flip_display();
-    
     al_start_timer(timer);
     
     while (!doexit) {
@@ -108,16 +105,13 @@ int main(int argc, char **argv) {
             redraw = false;
             
             al_clear_to_color(al_map_rgb(0,0,0));
-            
             al_draw_bitmap(bouncer, bouncer_x, bouncer_y, 0);
-            
             al_draw_bitmap(pad, pad_x, pad_y, 0);
-            
             al_flip_display();
         }
     }
     
-    //destroy all objects before exiting
+    //Destroy all objects before exiting
     al_destroy_bitmap(bouncer);
     al_destroy_bitmap(pad);
     al_destroy_timer(timer);
@@ -127,6 +121,7 @@ int main(int argc, char **argv) {
     return 0;
 }
 
+//This function initializes all the allegro objects
 int initialize(){
     if(!al_init()){
         fprintf(stderr, "failed to initialize allegro");
@@ -177,6 +172,5 @@ int initialize(){
         al_destroy_timer(timer);
         return -1;
     }
-    
     return 0;
 }
