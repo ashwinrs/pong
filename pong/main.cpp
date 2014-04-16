@@ -13,58 +13,30 @@
 
 using namespace std;
 
+//Global variables
+ALLEGRO_DISPLAY     *display       = NULL;
+ALLEGRO_EVENT_QUEUE *event_queue   = NULL;
+ALLEGRO_TIMER       *timer         = NULL;
+ALLEGRO_BITMAP      *bouncer       = NULL;
+ALLEGRO_BITMAP      *pad           = NULL;
+float bouncer_x = SCREEN_W / 2.0 - BOUNCER_SIZE / 2.0;
+float bouncer_y = SCREEN_H / 2.0 - BOUNCER_SIZE / 2.0;
+float pad_x = SCREEN_W / 2.0 - PAD_W / 2.0;
+float pad_y = SCREEN_H - PAD_H / 2.0;
+
+
+
+//Function prototypes
+int initialize();
+
+
 int main(int argc, char **argv) {
-    ALLEGRO_DISPLAY     *display       = NULL;
-    ALLEGRO_EVENT_QUEUE *event_queue   = NULL;
-    ALLEGRO_TIMER       *timer         = NULL;
-    ALLEGRO_BITMAP      *bouncer       = NULL;
-    ALLEGRO_BITMAP      *pad           = NULL;
-    float bouncer_x = SCREEN_W / 2.0 - BOUNCER_SIZE / 2.0;
-    float bouncer_y = SCREEN_H / 2.0 - BOUNCER_SIZE / 2.0;
-    float pad_x = SCREEN_W / 2.0 - PAD_W / 2.0;
-    float pad_y = SCREEN_H - PAD_H / 2.0;
     
     bool key[4] = { false, false};
     bool redraw = true;
     bool doexit = false;
     
-    if(!al_init()){
-        fprintf(stderr, "failed to initialize allegro");
-        return -1;
-    }
-    
-    if(!al_install_keyboard()) {
-        fprintf(stderr, "failed to initialize the keyboard!\n");
-        return -1;
-    }
-    
-    timer = al_create_timer(1.0 / FPS);
-    if(!timer) {
-        fprintf(stderr, "failed to create timer!\n");
-        return -1;
-    }
-    
-    display = al_create_display(SCREEN_W, SCREEN_H);
-    if(!display) {
-        fprintf(stderr, "failed to create display!\n");
-        al_destroy_timer(timer);
-        return -1;
-    }
-    
-    bouncer = al_create_bitmap(BOUNCER_SIZE, BOUNCER_SIZE);
-    if(!bouncer) {
-        fprintf(stderr, "failed to create bouncer bitmap!\n");
-        al_destroy_display(display);
-        al_destroy_timer(timer);
-        return -1;
-    }
-    
-    pad = al_create_bitmap(PAD_W, PAD_H);
-    if(!pad) {
-        fprintf(stderr, "failed to create bouncer bitmap!\n");
-        al_destroy_bitmap(bouncer);
-        al_destroy_display(display);
-        al_destroy_timer(timer);
+    if(initialize()){
         return -1;
     }
     
@@ -77,16 +49,6 @@ int main(int argc, char **argv) {
     al_clear_to_color(al_map_rgb(255, 255, 0));
     
     al_set_target_bitmap(al_get_backbuffer(display));
-    
-    event_queue = al_create_event_queue();
-    if(!event_queue) {
-        fprintf(stderr, "failed to create event_queue!\n");
-        al_destroy_bitmap(pad);
-        al_destroy_bitmap(bouncer);
-        al_destroy_display(display);
-        al_destroy_timer(timer);
-        return -1;
-    }
     
     al_register_event_source(event_queue, al_get_display_event_source(display));
     
@@ -161,6 +123,60 @@ int main(int argc, char **argv) {
     al_destroy_timer(timer);
     al_destroy_display(display);
     al_destroy_event_queue(event_queue);
+    
+    return 0;
+}
+
+int initialize(){
+    if(!al_init()){
+        fprintf(stderr, "failed to initialize allegro");
+        return -1;
+    }
+    
+    if(!al_install_keyboard()) {
+        fprintf(stderr, "failed to initialize the keyboard!\n");
+        return -1;
+    }
+    
+    timer = al_create_timer(1.0 / FPS);
+    if(!timer) {
+        fprintf(stderr, "failed to create timer!\n");
+        return -1;
+    }
+    
+    display = al_create_display(SCREEN_W, SCREEN_H);
+    if(!display) {
+        fprintf(stderr, "failed to create display!\n");
+        al_destroy_timer(timer);
+        return -1;
+    }
+    
+    bouncer = al_create_bitmap(BOUNCER_SIZE, BOUNCER_SIZE);
+    if(!bouncer) {
+        fprintf(stderr, "failed to create bouncer bitmap!\n");
+        al_destroy_display(display);
+        al_destroy_timer(timer);
+        return -1;
+    }
+    
+    pad = al_create_bitmap(PAD_W, PAD_H);
+    if(!pad) {
+        fprintf(stderr, "failed to create bouncer bitmap!\n");
+        al_destroy_bitmap(bouncer);
+        al_destroy_display(display);
+        al_destroy_timer(timer);
+        return -1;
+    }
+    
+    event_queue = al_create_event_queue();
+    if(!event_queue) {
+        fprintf(stderr, "failed to create event_queue!\n");
+        al_destroy_bitmap(pad);
+        al_destroy_bitmap(bouncer);
+        al_destroy_display(display);
+        al_destroy_timer(timer);
+        return -1;
+    }
     
     return 0;
 }

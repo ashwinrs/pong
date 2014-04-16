@@ -19,7 +19,7 @@ const int BOUNCER_SIZE = 10;
 //pad size
 const int PAD_W = 80;
 const int PAD_H = 8;
-const float PAD_STEP_SIZE = 4;
+const float PAD_STEP_SIZE = 8;
 
 enum MYKEYS {
     KEY_LEFT, KEY_RIGHT
