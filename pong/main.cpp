@@ -22,9 +22,9 @@ int main(int argc, char **argv) {
     float bouncer_x = SCREEN_W / 2.0 - BOUNCER_SIZE / 2.0;
     float bouncer_y = SCREEN_H / 2.0 - BOUNCER_SIZE / 2.0;
     float pad_x = SCREEN_W / 2.0 - PAD_W / 2.0;
-    float pad_y = SCREEN_H / 2.0 - PAD_H / 2.0;
+    float pad_y = SCREEN_H - PAD_H / 2.0;
     
-    bool key[4] = { false, false, false, false };
+    bool key[4] = { false, false};
     bool redraw = true;
     bool doexit = false;
     
@@ -98,12 +98,48 @@ int main(int argc, char **argv) {
     
     al_flip_display();
     
+    al_start_timer(timer);
+    
     while (!doexit) {
         ALLEGRO_EVENT ev;
         al_wait_for_event(event_queue, &ev);
         
         if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             break;
+        }else if (ev.type == ALLEGRO_EVENT_TIMER) {
+            if(key[KEY_LEFT] && pad_x >= 0 ){
+                pad_x -= PAD_STEP_SIZE;
+            }
+            if (key[KEY_RIGHT] && pad_x <= SCREEN_W-PAD_W ) {
+                pad_x += PAD_STEP_SIZE;
+            }
+            
+            redraw = true;
+            
+        }else if (ev.type == ALLEGRO_EVENT_KEY_DOWN){
+            switch(ev.keyboard.keycode) {
+                case ALLEGRO_KEY_LEFT:
+                    key[KEY_LEFT] = true;
+                    break;
+                    
+                case ALLEGRO_KEY_RIGHT:
+                    key[KEY_RIGHT] = true;
+                    break;
+            }
+        }else if (ev.type == ALLEGRO_EVENT_KEY_UP){
+            switch(ev.keyboard.keycode) {
+                case ALLEGRO_KEY_LEFT:
+                    key[KEY_LEFT] = false;
+                    break;
+                    
+                case ALLEGRO_KEY_RIGHT:
+                    key[KEY_RIGHT] = false;
+                    break;
+                
+                case ALLEGRO_KEY_ESCAPE:
+                    doexit = true;
+                    break;
+            }
         }
         
         if(redraw && al_is_event_queue_empty(event_queue)) {

@@ -17,11 +17,12 @@ const int SCREEN_H = 480;
 const int BOUNCER_SIZE = 10;
 
 //pad size
-const int PAD_W = 40;
-const int PAD_H = 4;
+const int PAD_W = 80;
+const int PAD_H = 8;
+const float PAD_STEP_SIZE = 4;
 
 enum MYKEYS {
-    KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
+    KEY_LEFT, KEY_RIGHT
 };
 
 #endif
