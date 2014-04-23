@@ -147,6 +147,7 @@ int main(int argc, char **argv) {
             al_lock_mutex(bouncer.mutex);
             float X = bouncer.bouncer_x;
             float Y = bouncer.bouncer_y;
+            bouncer.ready = false;
             al_unlock_mutex(bouncer.mutex);
             
             al_clear_to_color(al_map_rgb(0,0,0));
@@ -180,18 +181,20 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
     while (!al_get_thread_should_stop(thr)) {
         al_lock_mutex(bouncer->mutex);
         //add ready==false
-        if(bouncer->bouncer_x < 0 || bouncer->bouncer_x > SCREEN_W - BOUNCER_SIZE) {
-            bouncer->bouncer_dx = -bouncer->bouncer_dx;
+        if(bouncer->ready == false){
+            if(bouncer->bouncer_x < 0 || bouncer->bouncer_x > SCREEN_W - BOUNCER_SIZE) {
+                bouncer->bouncer_dx = -bouncer->bouncer_dx;
+            }
+            
+            if(bouncer->bouncer_y < 0 || bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE) {
+                bouncer->bouncer_dy = -bouncer->bouncer_dy;
+            }
+            
+            bouncer->bouncer_x += bouncer->bouncer_dx;
+            bouncer->bouncer_y += bouncer->bouncer_dy;
+            
+            bouncer->ready=true;
         }
-        
-        if(bouncer->bouncer_y < 0 || bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE) {
-            bouncer->bouncer_dy = -bouncer->bouncer_dy;
-        }
-        
-        bouncer->bouncer_x += bouncer->bouncer_dx;
-        bouncer->bouncer_y += bouncer->bouncer_dy;
-        
-        bouncer->ready=true;
         al_unlock_mutex(bouncer->mutex);
     }
     return NULL;
