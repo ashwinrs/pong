@@ -80,16 +80,19 @@ int main(int argc, char **argv) {
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     
+    printf("main : before thread creation\n");
     
     //Thread creation
     thread_1 = al_create_thread(Bouncer_Thread, &bouncer);
     al_start_thread(thread_1);
     
     //Make sure the thread comes up and thread initializes the bouncer object
-    al_lock_mutex(bouncer.mutex);
-    while (!bouncer.ready) {
-    }
-    al_unlock_mutex(bouncer.mutex);
+//    al_lock_mutex(bouncer.mutex);
+////    while (!bouncer.ready) {
+////    }
+//    al_unlock_mutex(bouncer.mutex);
+    
+    printf("main : after thread creation\n");
     
     
     al_clear_to_color(al_map_rgb(0,0,0));
@@ -172,6 +175,7 @@ int main(int argc, char **argv) {
 static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
     
     BOUNCER *bouncer = (BOUNCER*) arg;
+    printf("bouncer_thread : entered thread \n");
     
     while (!al_get_thread_should_stop(thr)) {
         al_lock_mutex(bouncer->mutex);
