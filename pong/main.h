@@ -21,8 +21,20 @@ const int PAD_W = 80;
 const int PAD_H = 8;
 const float PAD_STEP_SIZE = 8;
 
+//keyboard keys
 enum MYKEYS {
     KEY_LEFT, KEY_RIGHT
 };
+
+//macros
+#define LOG 0
+
+//#define PRINTA(a) ((LOG)==0?:printf(a))
+
+#ifdef LOG
+    #define PRINTA(a) printf(a)
+#else
+    #define PRINTA(a)
+#endif
 
 #endif
