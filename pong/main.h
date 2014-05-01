@@ -29,12 +29,17 @@ enum MYKEYS {
 //macros
 #define LOG 0
 
-//#define PRINTA(a) ((LOG)==0?:printf(a))
-
 #ifdef LOG
     #define PRINTA(a) printf(a)
 #else
     #define PRINTA(a)
 #endif
+
+#ifdef LOG
+#define PRINT1(a,b) printf(a,b)
+#else
+#define PRINT1(a,b)
+#endif
+
 
 #endif

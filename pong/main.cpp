@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include "main.h"
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_native_dialog.h>
+
 #include <iostream>
 
 using namespace std;
@@ -26,6 +28,8 @@ float pad_y = SCREEN_H - PAD_H / 2.0;
 
 //Function prototypes
 int initialize();
+void destroy_all_objects();
+void show_lost_window();
 static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg);
 
 class BOUNCER{
@@ -79,8 +83,8 @@ int main(int argc, char **argv) {
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
-    
-    PRINTA("main : before thread creation\n");
+    int test = 3333;
+    PRINT1("main : before thread creation %d\n",test);
     
     //Thread creation
     thread_1 = al_create_thread(Bouncer_Thread, &bouncer);
@@ -141,7 +145,10 @@ int main(int argc, char **argv) {
             float X = bouncer.bouncer_x;
             float Y = bouncer.bouncer_y;
             bouncer.ready = false;
+            
+            //notify bouncer thread that values have been copied
             al_broadcast_cond(bouncer.cond);
+            
             al_unlock_mutex(bouncer.mutex);
             
             al_clear_to_color(al_map_rgb(0,0,0));
@@ -152,12 +159,8 @@ int main(int argc, char **argv) {
         }
     }
     
-    //Destroy all objects before exiting
-    al_destroy_bitmap(bouncer_bitmap);
-    al_destroy_bitmap(pad_bitmap);
-    al_destroy_timer(timer);
-    al_destroy_display(display);
-    al_destroy_event_queue(event_queue);
+    //destroy all objects before exiting
+    destroy_all_objects();
     
     return 0;
 }
@@ -176,18 +179,23 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
         al_lock_mutex(bouncer->mutex);
         //add ready==false
         if(bouncer->ready == false){
+            //changes the diffs sign if it detects the coordinates is reaching end of window
             if(bouncer->bouncer_x < 0 || bouncer->bouncer_x > SCREEN_W - BOUNCER_SIZE) {
                 bouncer->bouncer_dx = -bouncer->bouncer_dx;
             }
             
-            if(bouncer->bouncer_y < 0 || bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE) {
+            if(bouncer->bouncer_y < 0) {
                 bouncer->bouncer_dy = -bouncer->bouncer_dy;
+            }else if(bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE){
+                show_lost_window();
             }
             
             bouncer->bouncer_x += bouncer->bouncer_dx;
             bouncer->bouncer_y += bouncer->bouncer_dy;
             
             bouncer->ready=true;
+            
+            //Make this thread to go to sleep until main thread reads it.
             al_wait_cond(bouncer->cond, bouncer->mutex);
         }
         al_unlock_mutex(bouncer->mutex);
@@ -249,3 +257,28 @@ int initialize(){
     }
     return 0;
 }
+
+void show_lost_window(){
+    const char* message       = "You lost :(";
+    const char* content_title = "Game Over";
+    const char* window_title  = "GAME OVER";
+
+    al_show_native_message_box(al_get_current_display(),
+                                      window_title,
+                                      content_title,
+                                      message, NULL,
+                                      ALLEGRO_MESSAGEBOX_ERROR);
+
+    destroy_all_objects();
+    exit(0);
+}
+
+void destroy_all_objects(){
+    //Destroy all objects before exiting
+    al_destroy_bitmap(bouncer_bitmap);
+    al_destroy_bitmap(pad_bitmap);
+    al_destroy_timer(timer);
+    al_destroy_display(display);
+    al_destroy_event_queue(event_queue);
+}
+
