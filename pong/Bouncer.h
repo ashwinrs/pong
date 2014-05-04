@@ -9,6 +9,8 @@
 #ifndef pong_Bouncer_h
 #define pong_Bouncer_h
 
+#include "Constants.h"
+
 class BOUNCER{
 public:
     ALLEGRO_MUTEX   *mutex;

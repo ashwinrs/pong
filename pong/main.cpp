@@ -7,13 +7,15 @@
 //
 
 #include <stdio.h>
-#include "main.h"
+
+#include <iostream>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_native_dialog.h>
 
 #include "Bouncer.h"
+#include "GameState.h"
+#include "Constants.h"
 
-#include <iostream>
 
 using namespace std;
 
@@ -26,14 +28,11 @@ ALLEGRO_BITMAP      *pad_bitmap    = NULL;
 float pad_x = SCREEN_W / 2.0 - PAD_W / 2.0;
 float pad_y = SCREEN_H - PAD_H / 2.0;
 
-
-
 //Function prototypes
 int initialize();
 void destroy_all_objects();
 void show_lost_window();
 static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg);
-
 
 
 int main(int argc, char **argv) {
@@ -63,8 +62,6 @@ int main(int argc, char **argv) {
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_keyboard_event_source());
-    int test = 3333;
-    PRINT1("main : before thread creation %d\n",test);
     
     //Thread creation
     thread_1 = al_create_thread(Bouncer_Thread, &bouncer);

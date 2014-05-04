@@ -102,6 +102,7 @@
 		CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroTTF-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroTTF-5.1.framework"; sourceTree = "<group>"; };
 		CFA4338F1916DF2200C28AD1 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		CFA433911916E7B500C28AD1 /* Bouncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bouncer.h; sourceTree = "<group>"; };
+		CFA433921916F02B00C28AD1 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CFFB996318FCED710047F282 /* thread_example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread_example.cpp; sourceTree = "<group>"; };
 		CFFB996418FCED710047F282 /* thread_example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread_example.h; sourceTree = "<group>"; };
 		CFFB996618FCF55D0047F282 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
@@ -192,10 +193,10 @@
 		CF30BA2418F257B800AC27DD /* pong */ = {
 			isa = PBXGroup;
 			children = (
+				CF30BA2518F257B800AC27DD /* Supporting Files */,
 				CFA433901916E66700C28AD1 /* Examples */,
 				CFA4338E1916DCB400C28AD1 /* Classes */,
 				CF30BA2A18F257B800AC27DD /* main.cpp */,
-				CF30BA2518F257B800AC27DD /* Supporting Files */,
 				CFFB996618FCF55D0047F282 /* main.h */,
 			);
 			path = pong;
@@ -235,6 +236,7 @@
 			children = (
 				CFA4338F1916DF2200C28AD1 /* GameState.h */,
 				CFA433911916E7B500C28AD1 /* Bouncer.h */,
+				CFA433921916F02B00C28AD1 /* Constants.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

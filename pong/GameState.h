@@ -9,12 +9,14 @@
 #ifndef pong_GameState_h
 #define pong_GameState_h
 
+#include <allegro5/allegro.h>
+
 class GameState{
 public:
     ALLEGRO_MUTEX   *mutex;
     int             state;
     
-    GameState() : mutex(al_create_mutex),
+    GameState() : mutex(al_create_mutex()),
     state(0){}
     
     ~GameState(){
