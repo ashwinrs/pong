@@ -100,6 +100,8 @@
 		CF30BA5918F25CB400AC27DD /* AllegroMemfile-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroMemfile-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroMemfile-5.1.framework"; sourceTree = "<group>"; };
 		CF30BA5A18F25CB400AC27DD /* AllegroPrimitives-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroPrimitives-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroPrimitives-5.1.framework"; sourceTree = "<group>"; };
 		CF30BA5B18F25CB400AC27DD /* AllegroTTF-5.1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AllegroTTF-5.1.framework"; path = "../../../../../../../Library/Frameworks/AllegroTTF-5.1.framework"; sourceTree = "<group>"; };
+		CFA4338F1916DF2200C28AD1 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		CFA433911916E7B500C28AD1 /* Bouncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bouncer.h; sourceTree = "<group>"; };
 		CFFB996318FCED710047F282 /* thread_example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread_example.cpp; sourceTree = "<group>"; };
 		CFFB996418FCED710047F282 /* thread_example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread_example.h; sourceTree = "<group>"; };
 		CFFB996618FCF55D0047F282 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
@@ -190,10 +192,10 @@
 		CF30BA2418F257B800AC27DD /* pong */ = {
 			isa = PBXGroup;
 			children = (
+				CFA433901916E66700C28AD1 /* Examples */,
+				CFA4338E1916DCB400C28AD1 /* Classes */,
 				CF30BA2A18F257B800AC27DD /* main.cpp */,
 				CF30BA2518F257B800AC27DD /* Supporting Files */,
-				CFFB996318FCED710047F282 /* thread_example.cpp */,
-				CFFB996418FCED710047F282 /* thread_example.h */,
 				CFFB996618FCF55D0047F282 /* main.h */,
 			);
 			path = pong;
@@ -226,6 +228,24 @@
 				CF30BA4518F257B800AC27DD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFA4338E1916DCB400C28AD1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CFA4338F1916DF2200C28AD1 /* GameState.h */,
+				CFA433911916E7B500C28AD1 /* Bouncer.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CFA433901916E66700C28AD1 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				CFFB996318FCED710047F282 /* thread_example.cpp */,
+				CFFB996418FCED710047F282 /* thread_example.h */,
+			);
+			name = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

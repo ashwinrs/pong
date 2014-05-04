@@ -11,6 +11,8 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_native_dialog.h>
 
+#include "Bouncer.h"
+
 #include <iostream>
 
 using namespace std;
@@ -32,29 +34,7 @@ void destroy_all_objects();
 void show_lost_window();
 static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg);
 
-class BOUNCER{
-public:
-    ALLEGRO_MUTEX   *mutex;
-    ALLEGRO_COND    *cond;
-    float           bouncer_x;
-    float           bouncer_y;
-    float           bouncer_dx;
-    float           bouncer_dy;
-    bool            ready;
-    
-    BOUNCER() : mutex(al_create_mutex()),
-    cond(al_create_cond()),
-    bouncer_x(SCREEN_W / 2.0 - BOUNCER_SIZE / 2.0),
-    bouncer_y(SCREEN_H / 2.0 - BOUNCER_SIZE / 2.0),
-    bouncer_dx(-4.0),
-    bouncer_dy(-4.0),
-    ready(false){}
-         
-    ~BOUNCER(){
-        al_destroy_mutex(mutex);
-        al_destroy_cond(cond);
-    }
-};
+
 
 int main(int argc, char **argv) {
 
@@ -184,10 +164,8 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
                 bouncer->bouncer_dx = -bouncer->bouncer_dx;
             }
             
-            if(bouncer->bouncer_y < 0) {
+            if(bouncer->bouncer_y < 0 || bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE) {
                 bouncer->bouncer_dy = -bouncer->bouncer_dy;
-            }else if(bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE){
-                show_lost_window();
             }
             
             bouncer->bouncer_x += bouncer->bouncer_dx;
