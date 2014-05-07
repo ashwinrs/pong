@@ -14,7 +14,7 @@
 /*
  Game state variable -
  0 - Game is runnning
- 1 - User lost. Notify main thread that 
+ 1 - User lost. Notify main thread that game is over
  
  */
 

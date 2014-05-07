@@ -28,6 +28,9 @@ ALLEGRO_EVENT_QUEUE *event_queue   = NULL;
 ALLEGRO_TIMER       *timer         = NULL;
 ALLEGRO_BITMAP      *bouncer_bitmap= NULL;
 ALLEGRO_BITMAP      *pad_bitmap    = NULL;
+
+GameState gameState;
+
 float pad_x = SCREEN_W / 2.0 - PAD_W / 2.0;
 float pad_y = SCREEN_H - PAD_H / 2.0;
 
@@ -100,7 +103,6 @@ int main(int argc, char **argv) {
                     key[KEY_RIGHT] = true;
                     break;
             }
-            PRINT1("Pad x - %f \n ", pad_x);
         }else if (ev.type == ALLEGRO_EVENT_KEY_UP){
             switch(ev.keyboard.keycode) {
                 case ALLEGRO_KEY_LEFT:
@@ -129,6 +131,12 @@ int main(int argc, char **argv) {
             al_broadcast_cond(bouncer.cond);
             
             al_unlock_mutex(bouncer.mutex);
+            
+            if (gameState.state == 1) {
+                show_lost_window();
+                destroy_all_objects();
+                return 0;
+            }
             
             al_clear_to_color(al_map_rgb(0,0,0));
             al_draw_bitmap(pad_bitmap, pad_x, pad_y, 0);
@@ -164,14 +172,16 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
             
             if(bouncer->bouncer_y < 0){
                 bouncer->bouncer_dy = -bouncer->bouncer_dy;
-            }else if(bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE){
+            }else if(bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE - PAD_H){
                 //The bouncer has reached the end of the screen
-                //check pad location. If not here, the game is lost
+                //check pad location.
+                //if pad is below bouncer
                 if ((bouncer->bouncer_x >= pad_x ) && ( bouncer->bouncer_x <= (pad_x+PAD_W) )) {
                     bouncer->bouncer_dy = -bouncer->bouncer_dy;
                 }
                 else{
-                    
+                //if pad is not below the bouncer
+                    gameState.state = 1;
                 }
             }
                 

@@ -13,7 +13,7 @@
 
 //bouncer size
 const int BOUNCER_SIZE = 10;
-const int BOUNCER_STEP_SIZE = 6;
+const float BOUNCER_STEP_SIZE = 8;
 
 class BOUNCER{
 public:
@@ -29,8 +29,8 @@ public:
     cond(al_create_cond()),
     bouncer_x(SCREEN_W / 2.0 - BOUNCER_SIZE / 2.0),
     bouncer_y(SCREEN_H / 2.0 - BOUNCER_SIZE / 2.0),
-    bouncer_dx(-4.0),
-    bouncer_dy(-4.0),
+    bouncer_dx(-BOUNCER_STEP_SIZE),
+    bouncer_dy(-BOUNCER_STEP_SIZE),
     ready(false){}
     
     ~BOUNCER(){

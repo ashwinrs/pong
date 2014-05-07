@@ -9,7 +9,7 @@
 #ifndef pong_Constants_h
 #define pong_Constants_h
 
-const float FPS = 30;
+const float FPS = 60;
 const int SCREEN_W = 640;
 const int SCREEN_H = 480;
 
