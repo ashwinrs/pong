@@ -103,6 +103,7 @@
 		CFA4338F1916DF2200C28AD1 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		CFA433911916E7B500C28AD1 /* Bouncer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bouncer.h; sourceTree = "<group>"; };
 		CFA433921916F02B00C28AD1 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CFA43393191702E700C28AD1 /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		CFFB996318FCED710047F282 /* thread_example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread_example.cpp; sourceTree = "<group>"; };
 		CFFB996418FCED710047F282 /* thread_example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread_example.h; sourceTree = "<group>"; };
 		CFFB996618FCF55D0047F282 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
@@ -237,6 +238,7 @@
 				CFA4338F1916DF2200C28AD1 /* GameState.h */,
 				CFA433911916E7B500C28AD1 /* Bouncer.h */,
 				CFA433921916F02B00C28AD1 /* Constants.h */,
+				CFA43393191702E700C28AD1 /* Logging.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

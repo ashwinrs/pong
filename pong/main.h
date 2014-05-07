@@ -9,5 +9,6 @@
 #ifndef pong_main_h
 #define pong_main_h
 
+#define LOG 0
 
 #endif

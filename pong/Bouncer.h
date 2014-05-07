@@ -11,6 +11,10 @@
 
 #include "Constants.h"
 
+//bouncer size
+const int BOUNCER_SIZE = 10;
+const int BOUNCER_STEP_SIZE = 4;
+
 class BOUNCER{
 public:
     ALLEGRO_MUTEX   *mutex;

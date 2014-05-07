@@ -11,6 +11,13 @@
 
 #include <allegro5/allegro.h>
 
+/*
+ Game state variable -
+ 0 - Game is runnning
+ 1 - User lost. Notify main thread that 
+ 
+ */
+
 class GameState{
 public:
     ALLEGRO_MUTEX   *mutex;

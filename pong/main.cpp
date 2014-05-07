@@ -12,6 +12,9 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_native_dialog.h>
 
+
+#include "main.h" //this should be included first
+#include "Logging.h"
 #include "Bouncer.h"
 #include "GameState.h"
 #include "Constants.h"
@@ -36,7 +39,7 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg);
 
 
 int main(int argc, char **argv) {
-
+    
     ALLEGRO_THREAD *thread_1   = NULL;
     BOUNCER bouncer;
     
@@ -67,8 +70,6 @@ int main(int argc, char **argv) {
     thread_1 = al_create_thread(Bouncer_Thread, &bouncer);
     al_start_thread(thread_1);
     
-    PRINTA("main : after thread creation\n");
-    
     al_clear_to_color(al_map_rgb(0,0,0));
     al_flip_display();
     al_start_timer(timer);
@@ -80,10 +81,10 @@ int main(int argc, char **argv) {
         if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             break;
         }else if (ev.type == ALLEGRO_EVENT_TIMER) {
-            if(key[KEY_LEFT] && pad_x >= 0 ){
+            if(key[KEY_LEFT] && pad_x > 0 ){
                 pad_x -= PAD_STEP_SIZE;
             }
-            if (key[KEY_RIGHT] && pad_x <= SCREEN_W-PAD_W ) {
+            if (key[KEY_RIGHT] && pad_x <= SCREEN_W-PAD_W-PAD_STEP_SIZE ) {
                 pad_x += PAD_STEP_SIZE;
             }
             
@@ -99,6 +100,7 @@ int main(int argc, char **argv) {
                     key[KEY_RIGHT] = true;
                     break;
             }
+            PRINT1("Pad x - %f \n ", pad_x);
         }else if (ev.type == ALLEGRO_EVENT_KEY_UP){
             switch(ev.keyboard.keycode) {
                 case ALLEGRO_KEY_LEFT:
@@ -150,7 +152,6 @@ int main(int argc, char **argv) {
 static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
     
     BOUNCER *bouncer = (BOUNCER*) arg;
-    PRINTA("bouncer_thread : entered thread \n");
     
     while (!al_get_thread_should_stop(thr)) {
         al_lock_mutex(bouncer->mutex);
@@ -161,9 +162,16 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
                 bouncer->bouncer_dx = -bouncer->bouncer_dx;
             }
             
-            if(bouncer->bouncer_y < 0 || bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE) {
+            if(bouncer->bouncer_y < 0){
                 bouncer->bouncer_dy = -bouncer->bouncer_dy;
+            }else if(bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE){
+                //The bouncer has reached the end of the screen
+                //check pad location. If not here, the game is lost
+                if (bouncer->bouncer_x > (pad_x + PAD_W/2)) {
+                    
+                }
             }
+                
             
             bouncer->bouncer_x += bouncer->bouncer_dx;
             bouncer->bouncer_y += bouncer->bouncer_dy;
