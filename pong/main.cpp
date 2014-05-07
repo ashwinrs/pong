@@ -167,7 +167,10 @@ static void *Bouncer_Thread(ALLEGRO_THREAD *thr, void *arg){
             }else if(bouncer->bouncer_y > SCREEN_H - BOUNCER_SIZE){
                 //The bouncer has reached the end of the screen
                 //check pad location. If not here, the game is lost
-                if (bouncer->bouncer_x > (pad_x + PAD_W/2)) {
+                if ((bouncer->bouncer_x >= pad_x ) && ( bouncer->bouncer_x <= (pad_x+PAD_W) )) {
+                    bouncer->bouncer_dy = -bouncer->bouncer_dy;
+                }
+                else{
                     
                 }
             }

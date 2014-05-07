@@ -13,7 +13,7 @@
 
 //bouncer size
 const int BOUNCER_SIZE = 10;
-const int BOUNCER_STEP_SIZE = 4;
+const int BOUNCER_STEP_SIZE = 6;
 
 class BOUNCER{
 public:
