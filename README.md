@@ -1,4 +1,4 @@
-pong
+Pong
 ====
 
 A pong game implementation using Allegro 5
