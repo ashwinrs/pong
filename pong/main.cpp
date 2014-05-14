@@ -87,10 +87,9 @@ int main(int argc, char **argv) {
             if(key[KEY_LEFT] && pad_x > 0 ){
                 pad_x -= PAD_STEP_SIZE;
             }
-            if (key[KEY_RIGHT] && pad_x <= SCREEN_W-PAD_W-PAD_STEP_SIZE ) {
+            if (key[KEY_RIGHT] && pad_x <= (SCREEN_W - PAD_W - PAD_STEP_SIZE) ) {
                 pad_x += PAD_STEP_SIZE;
-            }
-            
+            }   
             redraw = true;
             
         }else if (ev.type == ALLEGRO_EVENT_KEY_DOWN){

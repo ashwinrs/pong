@@ -3,9 +3,8 @@ pong
 
 A pong game implementation using Allegro 5
 
+How to build
+============
 
-CPU Utilization - 
-
-When you use al_rest(0.01) in the bouncer thread the CPU utilization was around 1-3%
-
-When I used a bool ready flag in the bouncer thread, the CPU utilization was around 99%
+Follow the instruction here to setup Allegro 5 project using Xcode - http://wiki.allegro.cc/index.php?title=OSX,_Xcode_4,_Framework.
+Download the source code and build :)
